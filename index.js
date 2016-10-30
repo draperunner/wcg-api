@@ -7,7 +7,7 @@ app.disable('x-powered-by');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use('/api/teams', require('./api/teams'));
+app.use('/teams', require('./api/teams'));
 
 // Start server
 app.listen(8000, '127.0.0.1');
