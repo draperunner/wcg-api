@@ -10,4 +10,4 @@ app.use(bodyParser.json());
 app.use('/teams', require('./api/teams'));
 
 // Start server
-app.listen(8000, '127.0.0.1');
+app.listen(3200, '127.0.0.1');
