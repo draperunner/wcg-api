@@ -17,6 +17,7 @@ This will start a server listening on `localhost:3200`.
 ## API Reference
 Base URL: `http://wcg-api.byrkje.land`
 
-| Endpoint       | Description | WCG URL
-| ---------------|:------------|:-----------------
+| Endpoint         | Description | WCG URL
+| -----------------|:------------|:-----------------
+| `/teams`         | Main page for stats by team | https://secure.worldcommunitygrid.org/stat/viewTeams.do
 | `/teams/:teamId` | Statistics for a given team | https://secure.worldcommunitygrid.org/team/viewTeamInfo.do?teamId=TEAMID

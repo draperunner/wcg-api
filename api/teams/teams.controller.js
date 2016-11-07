@@ -1,6 +1,24 @@
 import rp from 'request-promise';
 import xml2json from 'xml2json';
 
+export const getOverallTeamsStats = (req, res) => {
+  const options = {
+    url: 'https://secure.worldcommunitygrid.org/stat/viewTeams.do?xml=true',
+    qs: {
+      xml: 'true',
+      teamId: req.params.teamId,
+    },
+  };
+
+  rp(options)
+    .then((xml) => {
+      res.json(xml2json.toJson(xml, { object: true }));
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
 /**
  * Return the statistics site for a given team
  */
