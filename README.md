@@ -1,6 +1,8 @@
 # WCG API
 A RESTful JSON interface for (some of) the World Community Grid's public statistics.
 
+**[API Reference](https://github.com/draperunner/wcg-api/wiki)**
+
 ### Setup
 ```bash
 git clone https://github.com/draperunner/wcg-api.git
@@ -13,11 +15,3 @@ npm install
 npm start
 ```
 This will start a server listening on `localhost:3200`.
-
-## API Reference
-Base URL: `http://wcg-api.byrkje.land`
-
-| Endpoint         | Description | WCG URL
-| -----------------|:------------|:-----------------
-| `/teams`         | Main page for stats by team | https://secure.worldcommunitygrid.org/stat/viewTeams.do
-| `/teams/:teamId` | Statistics for a given team | https://secure.worldcommunitygrid.org/team/viewTeamInfo.do?teamId=TEAMID
