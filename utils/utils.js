@@ -1,6 +1,7 @@
 import rp from 'request-promise';
 import xml2json from 'xml2json';
 import Promise from 'bluebird';
+import camelcaseKeys from 'camelcase-keys';
 
 /**
  * Fetch the XML version of a page, return the XML parsed to JSON.
@@ -14,9 +15,10 @@ export const fetchAndParseXml = _options => new Promise((resolve, reject) => {
     },
   };
 
-  console.log(options);
-
   rp(options)
-    .then(xml => resolve(xml2json.toJson(xml, { object: true })))
+    .then((xml) => {
+      const parsedJson = xml2json.toJson(xml, { object: true });
+      return resolve(camelcaseKeys(parsedJson, { deep: true }));
+    })
     .catch(err => reject(err));
 });
