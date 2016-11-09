@@ -1,9 +1,11 @@
 import express from 'express';
-import { getTeamInfoById, getOverallTeamsStats } from './teams.controller';
+import teamsController from './teams.controller';
 
 const router = express.Router();
 
-router.get('/', getOverallTeamsStats);
-router.get('/:teamId', getTeamInfoById);
+router.get('/all-time', teamsController.getAllTimeStats);
+router.get('/yesterday', teamsController.getYesterdayStats);
+router.get('/:teamId', teamsController.getTeamInfoById);
+router.get('/', teamsController.getOverallTeamsStats);
 
 module.exports = router;
