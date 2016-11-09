@@ -11,6 +11,7 @@ module.exports = {
       "node": true
     },
     "rules": {
-      "import/prefer-default-export": "off"
+      "import/prefer-default-export": "off",
+      "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
     }
 };

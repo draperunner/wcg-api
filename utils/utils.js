@@ -22,3 +22,23 @@ export const fetchAndParseXml = _options => new Promise((resolve, reject) => {
     })
     .catch(err => reject(err));
 });
+
+
+/**
+ * Remove keys with null or undefined values recursively
+ */
+export const clean = (_obj) => {
+  const obj = { ..._obj };
+  const propNames = Object.getOwnPropertyNames(obj);
+
+  for (let i = 0; i < propNames.length; i++) {
+    const prop = propNames[i];
+    if (obj[prop] === undefined || obj[prop] === null) {
+      delete obj[prop];
+    } else if (typeof obj[prop] === 'object') {
+      obj[prop] = clean(obj[prop]);
+    }
+  }
+
+  return obj;
+};
