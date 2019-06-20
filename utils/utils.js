@@ -1,6 +1,5 @@
 import rp from 'request-promise';
 import xml2json from 'xml2json';
-import Promise from 'bluebird';
 import camelcaseKeys from 'camelcase-keys';
 
 /**
