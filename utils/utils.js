@@ -5,7 +5,7 @@ import camelcaseKeys from 'camelcase-keys';
 /**
  * Fetch the XML version of a page, return the XML parsed to JSON.
  */
-export const fetchAndParseXml = _options => new Promise((resolve, reject) => {
+export const fetchAndParseXml = (_options) => new Promise((resolve, reject) => {
   const options = {
     ..._options,
     qs: {
@@ -19,7 +19,7 @@ export const fetchAndParseXml = _options => new Promise((resolve, reject) => {
       const parsedJson = xml2json.toJson(xml, { object: true });
       return resolve(camelcaseKeys(parsedJson, { deep: true }));
     })
-    .catch(err => reject(err));
+    .catch((err) => reject(err));
 });
 
 

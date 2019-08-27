@@ -9,7 +9,7 @@ const getChallengeInfoById = (req, res) => {
     qs: {
       challengeId: req.params.challengeId,
     },
-  }).then(result => res.json(result));
+  }).then((result) => res.json(result));
 };
 
 export default {

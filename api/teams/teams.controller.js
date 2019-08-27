@@ -7,7 +7,7 @@ import { validate } from '../param';
 const getOverallTeamsStats = (req, res) => {
   fetchAndParseXml({
     url: 'https://secure.worldcommunitygrid.org/stat/viewTeams.do?xml=true',
-  }).then(result => res.json(result));
+  }).then((result) => res.json(result));
 };
 
 /**
@@ -19,7 +19,7 @@ const getTeamInfoById = (req, res) => {
     qs: {
       teamId: req.params.teamId,
     },
-  }).then(result => res.json(result));
+  }).then((result) => res.json(result));
 };
 
 /**
@@ -38,7 +38,7 @@ const getAllTimeStats = (req, res) => {
     },
   };
 
-  fetchAndParseXml(clean(options)).then(result => res.json(result));
+  fetchAndParseXml(clean(options)).then((result) => res.json(result));
 };
 
 /**
@@ -57,7 +57,7 @@ const getYesterdayStats = (req, res) => {
     },
   };
 
-  fetchAndParseXml(clean(options)).then(result => res.json(result));
+  fetchAndParseXml(clean(options)).then((result) => res.json(result));
 };
 
 export default {
